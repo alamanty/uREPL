@@ -54,8 +54,8 @@ public class KeyBinding
 	{
 		keyEvent_.Add(KeyCode.UpArrow, Prev);
 		keyEvent_.Add(KeyCode.DownArrow, Next);
-		keyEvent_.Add(KeyCode.LeftArrow, StopCompletion);
-		keyEvent_.Add(KeyCode.RightArrow, StopCompletion);
+		foreach (var k in new KeyCode[] { KeyCode.Home, KeyCode.End, KeyCode.LeftArrow, KeyCode.RightArrow })
+			keyEvent_.Add(k, StopCompletion);
 	}
 
 	private void InitializeCommands()
